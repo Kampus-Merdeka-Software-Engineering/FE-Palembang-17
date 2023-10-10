@@ -35,7 +35,7 @@ const submitRegister = document.addEventListener('submit', async (e) => {
     }).then((res) => {
         if (res.status === 200) {
             alert("Register Success");
-            window.location.href = '../login.html';
+            window.location.href = 'login.html';
         } else {
             res.json().then((data) => {
                 console.log(data);

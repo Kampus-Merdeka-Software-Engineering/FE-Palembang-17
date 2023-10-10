@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     } else {
         username.innerHTML = `<a href="./login.html">Login/Register</a>`;
         logoutButton.style.display = 'none';
-        // window.location.href = "../login.html";
+        // window.location.href = "login.html";
     }
 });
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(response);
 
             if (response.ok) {
-                window.location.href = "../login.html";
+                window.location.href = "login.html";
             } else {
                 const errorData = await response.json();
                 console.error("Logout failed:", errorData.error);
