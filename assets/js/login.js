@@ -21,7 +21,7 @@ const login = document.addEventListener('submit', async (e) => {
     }).then((res) => {
         if (res.status === 200) {
             // redirect to home page
-            window.location.href = '../index.html';
+            window.location.href = './index.html';
         } else {
             res.json().then((data) => {
                 const error = document.getElementById('errorMessage');
