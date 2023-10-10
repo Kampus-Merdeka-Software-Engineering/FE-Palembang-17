@@ -1,5 +1,5 @@
 // Ajax Handling for login
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://bright-calf-pantyhose.cyclic.app';
 
 // register form handler
 const submitRegister = document.addEventListener('submit', async (e) => {

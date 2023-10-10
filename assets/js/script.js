@@ -1,5 +1,5 @@
 // Ajax Handling for general pages
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://bright-calf-pantyhose.cyclic.app';
 
 // get user data from sessionStorage
 document.addEventListener('DOMContentLoaded', async function () {
