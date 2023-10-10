@@ -1,3 +1,56 @@
+// Ajax Handling for general pages
+const BASE_URL = 'http://localhost:3000';
+
+// get user data from sessionStorage
+document.addEventListener('DOMContentLoaded', async function () {
+    const response = await fetch(`${BASE_URL}/api/user`);
+    const data = await response.json();
+
+    const username = document.getElementById('loginUser');
+    const logoutButton = document.getElementById('logout-button');
+
+    if (response.ok) {
+        const user = data.data;
+        username.innerHTML = user.name;
+        console.log(user);
+        
+        logoutButton.style.display = 'block';
+    } else {
+        username.innerHTML = `<a href="./login.html">Login/Register</a>`;
+        logoutButton.style.display = 'none';
+        // window.location.href = "../login.html";
+    }
+});
+
+// logout handler
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutButton = document.getElementById('logout-button');
+
+    logoutButton.addEventListener('click', async function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        try {
+            const response = await fetch(`${BASE_URL}/users/logout`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            console.log(response);
+
+            if (response.ok) {
+                window.location.href = "../login.html";
+            } else {
+                const errorData = await response.json();
+                console.error("Logout failed:", errorData.error);
+            }
+        } catch (error) {
+            console.error("Logout error:", error);
+        }
+    });
+});
+
 const menuItems = document.querySelectorAll('.menu-item');
 
 menuItems.forEach((menuItem) => {
@@ -260,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 console.log("Before redirection");
-                window.location.href = "home.html"; // Use a relative path
+                window.location.href = "index.html"; // Use a relative path
                 console.log("After redirection");
             } else {
                 const errorData = await response.json(); // Extract error message
@@ -270,41 +323,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error:", error);
             errorMessage.innerText = "An error occurred. Please try again later.";
         }
-    });
-});
-
-// Add this code to your script.js file
-document.addEventListener('DOMContentLoaded', function () {
-    const logoutButton = document.getElementById('logout-button');
-
-    logoutButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-
-        // Perform the logout actions here, such as clearing session data
-        // You can use an API request to your server to clear the session
-
-        // For example, using fetch to send a logout request to the server
-        fetch('/logout', {
-            method: 'POST', // Use POST or the appropriate HTTP method for your server
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle the response from the server, if needed
-            if (data.success) {
-                // Redirect to the login page or perform any other action
-                window.location.href = '/login.html'; // Replace with your login page URL
-            } else {
-                // Handle errors, if any
-                console.error('Logout failed:', data.error);
-            }
-        })
-        .catch(error => {
-            // Handle network or other errors
-            console.error('Logout error:', error);
-        });
     });
 });
 

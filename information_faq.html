@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../information_faq.css">
-    <script src="../script.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/information_faq.css">
+    <script src="./assets/js/script.js" defer></script>
     <script>
         function redirectToFAQ() {
             // Mengarahkan ke halaman "information_faq.html" saat tombol "FAQ" diklik
@@ -23,8 +23,8 @@
     <header class="transparent-header">
         <div class="container">
             <div class="logo">
-                <a href="home.html">
-                    <img src="../../image/triverse.png" alt="Triverse Shipping Logo">
+                <a href="./index.html">
+                    <img src="./assets/images/triverse.png" alt="Triverse Shipping Logo">
                 </a>
             </div>
             <nav>
@@ -34,8 +34,8 @@
                             <span class="menu-icon">
                                 <img width="20" height="20" src="https://img.icons8.com/ios/50/packing.png" alt="packing"/>
                             </span>
+                            Order
                         </a>
-                        Order
                     </li>
                     <li class="menu-item parent" id="search">
                         <span class="menu-icon">
@@ -86,23 +86,19 @@
                             <span class="menu-icon">
                                 <img width="20" height="20" src="https://img.icons8.com/ios/50/conference-call--v1.png" alt="conference-call--v1"/>
                             </span>
+                            About Us
                         </a>
-                        About Us
                     </li>
-                    <li class="menu-item parent" id="login">
-                        <a href="home.html">
+                    <li class="menu-item parent">
+                        <a href="./index.html">
                         <span class="menu-icon">
                             <img width="18" height="18" src="https://img.icons8.com/ios/50/test-account.png" alt="test-account"/>
                         </span>
                         </a>
-                        <% if (userLoggedIn) { %>
-                            <%= username %>
-                        <% } else { %>
-                            <a href="/login.html">Login/Register</a>
-                        <% } %>
+                        <div id="loginUser"></div>
                     </li>
-                    <li action="/logout" method="post" id="logout-button" >
-                        <a href="/">
+                    <li id="logout">
+                        <a href="login.html">
                             <button id="logout-button">Logout</button>
                         </a>
                     </li>
@@ -115,10 +111,10 @@
         <div class="slider-container">
             <div class="slider">
                 <div class="slide">
-                    <img width="20" height="20" src="../image/Information 1.png" alt="Banner 1">
+                    <img width="20" height="20" src="./assets/images/Information 1.png" alt="Banner 1">
                 </div>
                 <div class="slide">
-                    <img width="20" height="20" src="../image/information 2.png" alt="Banner 2">
+                    <img width="20" height="20" src="./assets/images/information 2.png" alt="Banner 2">
                 </div>
             </div>
         </div>

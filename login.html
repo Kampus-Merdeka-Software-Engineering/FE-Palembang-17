@@ -5,21 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="login.css">
-        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="./assets/css/login.css"">
+        <script src="./assets/js/login.js" defer></script>
     </head>
 
     <body>
         <div class="wrapper">
             <div class="form-box-login">
                 <h2>Login</h2>
-                <form id="loginForm" action="/auth/login.html" method="POST" >
+                <form id="loginForm" >
                     <div class="input-box">
-                        <input type="text" placeholder="Username" required name="name">
+                        <input type="text" placeholder="Email" required id="email" name="email">
                         <i class='bx bxs-user'></i>
                     </div>
                     <div class = "input-box">
-                        <input type="password" placeholder="Password" required name="password">
+                        <input type="password" placeholder="Password" required id="password" name="password">
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                     <div class = "remember-forgot">

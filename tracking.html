@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../ongkir.css">
-    <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/ongkir.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
     <title>Triverse Shipping</title>
 </head>
-<body onload="loadProvinsi()">
+<body>
     <header class="transparent-header">
         <div class="container">
             <div class="logo">
-                <a href="home.html">
-                    <img src="../../image/triverse.png" alt="Triverse Shipping Logo">
+                <a href="./index.html">
+                    <img src="./assets/images/triverse.png" alt="Triverse Shipping Logo">
                 </a>
             </div>
             <nav>
@@ -24,8 +24,8 @@
                             <span class="menu-icon">
                                 <img width="20" height="20" src="https://img.icons8.com/ios/50/packing.png" alt="packing"/>
                             </span>
+                            Order
                         </a>
-                        Order
                     </li>
                     <li class="menu-item parent" id="search">
                         <span class="menu-icon">
@@ -76,23 +76,19 @@
                             <span class="menu-icon">
                                 <img width="20" height="20" src="https://img.icons8.com/ios/50/conference-call--v1.png" alt="conference-call--v1"/>
                             </span>
+                            About Us
                         </a>
-                        About Us
                     </li>
-                    <li class="menu-item parent" id="login">
-                        <a href="home.html">
+                    <li class="menu-item parent">
+                        <a href="./index.html">
                         <span class="menu-icon">
                             <img width="18" height="18" src="https://img.icons8.com/ios/50/test-account.png" alt="test-account"/>
                         </span>
                         </a>
-                        <% if (userLoggedIn) { %>
-                            <%= username %>
-                        <% } else { %>
-                            <a href="/login.html">Login/Register</a>
-                        <% } %>
+                        <div id="loginUser"></div>
                     </li>
-                    <li action="/logout" method="post" id="logout-button" >
-                        <a href="/">
+                    <li id="logout">
+                        <a href="login.html">
                             <button id="logout-button">Logout</button>
                         </a>
                     </li>
@@ -104,13 +100,13 @@
         <div class="slider-container">
             <div class="slider">
                 <div class="slide">
-                    <img src="../../image/tracking1.png" alt="Banner 1">
+                    <img src="./assets/images/tracking1.png" alt="Banner 1">
                 </div>
                 <div class="slide">
-                    <img src="../../image/tracking 2.png" alt="Banner 2">
+                    <img src="./assets/images/tracking 2.png" alt="Banner 2">
                 </div>
                 <div class="slide">
-                    <img src="../../image/tracking  3.png" alt="Banner 3">
+                    <img src="./assets/images/tracking  3.png" alt="Banner 3">
                 </div>
             </div>
         </div>
@@ -126,15 +122,15 @@
         
     <!-- Search Button For Track and Tracking  -->
 
-        <form class="search" id= "search-form" action="/ship/track" method="get">
-            <input id="waybill-input"  type="search" name="waybill" size="50" placeholder="Please Enter Your WayBill Number" autocomplete="off"> <br>
-            <button type="submit" id="clickme" name="search"> <i class="fa-sharp fa-solid fa-magnifying-glass fa-beat" style="color: #221f51;"></i> Search</button>
+        <form class="search" id= "search-form" >
+            <input id="waybill-input"  type="search" name="waybill" size="50" placeholder="Please Enter Your WayBill Number" autocomplete="off" required> <br>
+            <button type="submit" id="search_waybill" name="search" > <i class="fa-sharp fa-solid fa-magnifying-glass fa-beat" style="color: #221f51;"></i> Search</button>
         </form>
 
-        <div id="status">
+        <div class="table-container" id="hasil">
             
         </div>
-
+        <script src="./assets/js/tracking.js" defer></script>
 
 
 </body>

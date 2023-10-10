@@ -1,5 +1,7 @@
+const BASE_URL = 'http://localhost:3000';
+
 function loadProvinsi() {
-    fetch('/api/provinsi')
+    fetch(`${BASE_URL}/api/provinsi`)
       .then(res => res.json())
       .then(data => {
         let temp = '<option value="" selected="" disabled="">-- Pilih Provinsi --</option>';
@@ -13,7 +15,7 @@ function loadProvinsi() {
   }
   
   function loadKota(id, el) {
-    fetch(`/api/kota/${id}`)
+    fetch(`${BASE_URL}/api/kota/${id}`)
       .then(res => res.json())
       .then(data => {
         let temp = '<option value="" selected="" disabled="">-- Pilih Kota --</option>';
@@ -42,7 +44,7 @@ function loadProvinsi() {
       };
   
       kurirs.forEach((kurir) => {
-        fetch(`/api/ongkos/${asal}/${tujuan}/${berat}/${kurir}`)
+        fetch(`${BASE_URL}/api/ongkos/${asal}/${tujuan}/${berat}/${kurir}`)
           .then(res => res.json())
           .then(data => {
             const ro = data.rajaongkir;

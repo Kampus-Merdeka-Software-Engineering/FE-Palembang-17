@@ -491,7 +491,7 @@ button[type="submit"]:hover {
 /* Gaya Bagian Keunggulan */
 .fits {
     text-align: center;
-    background-image: url('image/batas_feature.png'); 
+    background-image: url('../images/batas_feature.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
